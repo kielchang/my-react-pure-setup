@@ -1,10 +1,10 @@
-import {calc} from './calc'
+import calc from "./calc";
 
-console.log('Hello Webpack Project....');
-var i=0;
-document.getElementById("btn_clickme").addEventListener("click", function(event) {
-  i++;
-  document.getElementById("text").innerText=`Button Click ${i} times.`
+console.log("Hello Webpack Project....");
+let i = 0;
+document.getElementById("btn_clickme").addEventListener("click", () => {
+  i += 1;
+  document.getElementById("text").innerText = `Button Click ${i} times.`;
 });
 
-console.log(calc(20,5));
+console.log(calc(20, 5));

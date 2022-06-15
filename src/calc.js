@@ -1,3 +1,3 @@
-export function calc(a, b){
-  return `${a} + ${b} = ${a+b}`;
+export default function calc(a, b) {
+  return `${a} + ${b} = ${a + b}`;
 }
