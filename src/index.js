@@ -1,10 +1,10 @@
-import calc from "./calc";
+import React from "react";
+import ReactDOM from "react-dom";
 
-console.log("Hello Webpack Project....");
-let i = 0;
-document.getElementById("btn_clickme").addEventListener("click", () => {
-  i += 1;
-  document.getElementById("text").innerText = `Button Click ${i} times.`;
-});
+import App from "./App";
 
-console.log(calc(20, 5));
+const title = "React with Webpack and Babel!!";
+
+ReactDOM.render(<App title={title} />, document.getElementById("root"));
+
+import.meta.webpackHot.accept();

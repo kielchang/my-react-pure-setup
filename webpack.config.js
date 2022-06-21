@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
@@ -6,15 +7,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
     ],
   },
-  plugins: [new ESLintPlugin()],
+  plugins: [new ESLintPlugin(), new webpack.HotModuleReplacementPlugin()],
   resolve: {
-    extensions: ["*", ".js"],
+    extensions: ["*", ".js", ".jsx"],
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -22,5 +23,6 @@ module.exports = {
   },
   devServer: {
     static: path.resolve(__dirname, "./dist"),
+    hot: true,
   },
 };
